@@ -16,3 +16,22 @@ http://blog.csdn.net/zkp0601/article/details/41292533
 http://blog.csdn.net/abcjennifer/article/details/7622228
 
 https://wenku.baidu.com/view/de8a2ff49e314332396893f8.html
+
+
+
+http://blog.csdn.net/robin1987z/article/details/48914651
+
+
+http://cns-alumni.bu.edu/~slehar/fourier/fourier.html#filtering
+
+
+
+非常好的博客 还有关Latex 公式的方法
+http://blog.csdn.net/abcjennifer/article/details/7622228
+
+
+回复CCSSDDNNMLSQ：个人认为应该这么理解：图像的傅里叶变换图谱是统计了所有数字信号可被编码的频率，也就是从0到文中所说的尼奎斯特频率。
+二傅里叶变换的二维频谱图的单位就是频率，原点位于中心，横纵方向分别表示x和y方向的频率，频谱图的边界就是尼奎斯特频率，而频谱图中的像素点F（x,y）表示的是图像在该频率处的幅值。像素点越亮表示该点处幅值越高，也就表示图像在该频率处的累加越多，一般图片的低频部分占大多数，所以频谱图的中心部分会更亮
+
+http://www.cnblogs.com/sanshanyin/p/5426822.html
+
