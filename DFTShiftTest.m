@@ -7,7 +7,7 @@
 close all;    %first step
 clear all;     %second step
 
-I=imread('lena.ppm');
+I=imread('pp.ppm');
 
 I=im2double(I);
 
