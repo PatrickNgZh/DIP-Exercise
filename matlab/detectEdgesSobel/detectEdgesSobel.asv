@@ -1,0 +1,33 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   2017-6-23
+%   detect the edges of ocr.ppm by using Sobel
+%  including vertical and horizontal
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+close all;
+clear all;
+f=imread('ocr.ppm');
+figure;
+subplot(131);
+imshow(f); 
+title('original');
+
+h1 = [1 1 1; 1 1 1; 1 1 1];   %
+h2 =  [1 1 1; 1 1 1; 1 1 1];   %
+originalI = imfilter(originalI, hh);
+h4 = [0 -1 0; -1 5 -1; 0 -1 0];
+gx = imfilter(originalI, h4);
+subplot(222);
+imshow(originalI);
+title('原始图像的3*3模糊');
+subplot(223);
+imshow(gx);
+title('模糊：4邻Laplace锐化');
+h8 = [-1 -1 -1; -1 9 -1; -1 -1 -1];
+gx = imfilter(originalI, h4);
+subplot(224),
+imshow(gx); 
+title('模糊：8邻Laplace锐化');
