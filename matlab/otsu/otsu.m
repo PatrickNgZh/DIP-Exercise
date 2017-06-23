@@ -8,35 +8,35 @@
 f=imread('ocr.ppm');
 h=imhist(f);
 [sx,sy]=size(f);
-h = h/sx/sy;  %¹éÒ»»¯
+h = h/sx/sy;  %å½’ä¸€åŒ–
 
 w1(1:256)=0;
 w1(1)=h(1);
 for i=2:256
-    w1(i) = w1(i-1) + h(i); %ÀÛ¼Æ¹éÒ»
+    w1(i) = w1(i-1) + h(i); %ç´¯è®¡å½’ä¸€
 end;
 
-% h(1:256) ºÍ w1(1:256) , x(i) Îª¹éÒ»¡¢ÀÛ¼Æ¹éÒ»Ö±·½Í¼ ,sum( (i-1)*h(i))
+% h(1:256) å’Œ w1(1:256) , x(i) ä¸ºå½’ä¸€ã€ç´¯è®¡å½’ä¸€ç›´æ–¹å›¾ ,sum( (i-1)*h(i))
 w2 = 1-w1;   
 x(1:256)=0;
 for i=2:256  
     x(i)=x(i-1)+(i-1)*h(i); 
 end;
-mut=x(256);  %È«Æ½¾ù
+mut=x(256);  %å…¨å¹³å‡
 
 mu1= x./w1;  %t-fun 
-mu2=(mut-x) ./ w2;  %Á½ÀàµÄÆ½¾ù
+mu2=(mut-x) ./ w2;  %ä¸¤ç±»çš„å¹³å‡
 
 d = w1.*(mut-mu1).*(mut-mu1);
 d = d+w2.*(mut-mu2).*(mut-mu2);
 
-[mx,th]=max(d); %¼ÆËã×î´óÖµ£¬¼°Æä¶ÔÓ¦µÄĞòºÅ
+[mx,th]=max(d); %è®¡ç®—æœ€å¤§å€¼ï¼ŒåŠå…¶å¯¹åº”çš„åºå·
 
 figure;
 subplot(1,2,1);
 imshow(f);
 th = th -1; 
-g = im2bw(f, th/255 );%¶şÖµ»¯
+g = im2bw(f, th/255 );%äºŒå€¼åŒ–
 subplot(1,2,2); imshow(g);
 
 level = graythresh(f);
